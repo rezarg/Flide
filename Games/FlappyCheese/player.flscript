@@ -1,0 +1,17 @@
+# FLIDE-v1.5.4
+
+# Behaviors
+
+let jump_space = Keyboard("jump_space", "spacebar")
+let jump_click = MouseClick("jump_click", False)
+
+let jump_power = Number("jump_power", 10)
+
+let player_vel = Velocity("player_vel")
+
+# Links
+
+jump_space.Down : jump_power.Get
+jump_click.Down : jump_power.Get
+
+jump_power.Out : player_vel.Y
